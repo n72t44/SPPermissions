@@ -26,17 +26,47 @@ import UserNotifications
 
 struct SPNotificationPermission: SPPermissionProtocol {
     
+    var type: SPNotificationType
+    
+    enum SPNotificationType {
+        case Notifications
+        #if os(iOS)
+        case NotificationsAndCriticalAlerts
+        #endif
+    }
+    
+    init(type: SPNotificationType) {
+        self.type = type
+    }
+    
     var isAuthorized: Bool {
-        guard let authorizationStatus = fetchAuthorizationStatus() else { return false }
-        return authorizationStatus == .authorized
+        guard let authorizationSetting = fetchAuthorizationStatus() else { return false }
+        switch (type) {
+        case .Notifications:
+            return authorizationSetting.authorizationStatus == .authorized
+        case .NotificationsAndCriticalAlerts:
+            if #available(iOS 12.0, *) {
+                return authorizationSetting.authorizationStatus == .authorized && authorizationSetting.criticalAlertSetting == .enabled
+            } else {
+                return authorizationSetting.authorizationStatus == .authorized
+            }
+        }
     }
     
     var isDenied: Bool {
-        guard let authorizationStatus = fetchAuthorizationStatus() else { return false }
-        return authorizationStatus == .denied
+        guard let authorizationSetting = fetchAuthorizationStatus() else { return false }
+        switch (type) {
+        case .Notifications:
+            return authorizationSetting.authorizationStatus == .denied
+        case .NotificationsAndCriticalAlerts:
+            if #available(iOS 12.0, *) {
+                return authorizationSetting.authorizationStatus == .denied || authorizationSetting.criticalAlertSetting == .disabled
+            } else {
+                return authorizationSetting.authorizationStatus == .denied
+            }
+        }
     }
-    
-    private func fetchAuthorizationStatus() -> UNAuthorizationStatus? {
+    private func fetchAuthorizationStatus() -> UNNotificationSettings? {
         var notificationSettings: UNNotificationSettings?
         let semaphore = DispatchSemaphore(value: 0)
         
@@ -48,13 +78,20 @@ struct SPNotificationPermission: SPPermissionProtocol {
         }
         
         semaphore.wait()
-        return notificationSettings?.authorizationStatus
+        return notificationSettings
     }
     
     func request(completion: @escaping ()->()?) {
         if #available(iOS 10.0, tvOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            var opt : UNAuthorizationOptions = [.badge, .alert, .sound]
+            if #available(iOS 12.0, *) {
+                opt.insert(.providesAppNotificationSettings)
+                if (type == .NotificationsAndCriticalAlerts) {
+                    opt.insert(.criticalAlert)
+                }
+            }
+            center.requestAuthorization(options:opt) { (granted, error) in
                 DispatchQueue.main.async {
                     completion()
                 }

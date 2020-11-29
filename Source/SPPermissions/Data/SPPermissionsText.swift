@@ -50,7 +50,9 @@ enum SPPermissionsText {
             return "Bluetooth"
         #endif
         case .notification:
-            return "Notification"
+            return "Notifications"
+        case .notificationAndCriticalAlert:
+            return "Notifications and Critical Alerts"
         case .locationWhenInUse:
             return "Location When Use"
         case .tracking:
@@ -85,7 +87,9 @@ enum SPPermissionsText {
             return "Allow access to bluetooth"
         #endif
         case .notification:
-            return "Get important information without opening app."
+            return "Get important information without opening app"
+        case .notificationAndCriticalAlert:
+            return "Allow notifications that can bypass the device's mute switch and Do Not Disturb settings"
         case .locationWhenInUse:
             return "Allow to access your location"
         case .tracking:
