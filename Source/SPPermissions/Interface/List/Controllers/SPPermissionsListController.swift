@@ -83,8 +83,16 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
         }
 
         navigationItem.title = titleText
-        navigationItem.largeTitleDisplayMode = .automatic
-        navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .automatic
+        } else {
+            // Fallback on earlier versions
+        }
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+        } else {
+            // Fallback on earlier versions
+        }
         navigationController?.presentationController?.delegate = self
         
         tableView.delaysContentTouches = false
