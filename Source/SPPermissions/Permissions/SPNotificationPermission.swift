@@ -120,7 +120,7 @@ struct SPNotificationPermission: SPPermissionProtocol {
             }
         }
         
-        UIApplication.shared.registerForRemoteNotifications()
+        //UIApplication.shared.registerForRemoteNotifications() // this is up to the caller !!!
     }
 }
 
