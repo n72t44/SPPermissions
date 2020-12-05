@@ -41,6 +41,7 @@ import UIKit
     case mediaLibrary = 12
     case bluetooth = 13
     case notificationAndCriticalAlert = 15
+    case criticalAlert = 16
     #endif
     case notification = 2
     case locationWhenInUse = 9
@@ -107,6 +108,8 @@ import UIKit
         case .notification:
             return nil
         case .notificationAndCriticalAlert:
+            return nil
+        case .criticalAlert:
             return nil
         case .locationWhenInUse:
             return "NSLocationWhenInUseUsageDescription"
@@ -194,6 +197,12 @@ extension SPPermission {
         case .notification:
             #if SPPERMISSION_NOTIFICATION
             return SPNotificationPermission(type: SPNotificationPermission.SPNotificationType.Notifications)
+            #else
+            fatalError(error(permission))
+            #endif
+        case .criticalAlert:
+            #if SPPERMISSION_NOTIFICATION
+            return SPNotificationPermission(type: SPNotificationPermission.SPNotificationType.CriticalAlerts)
             #else
             fatalError(error(permission))
             #endif

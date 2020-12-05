@@ -32,6 +32,7 @@ struct SPNotificationPermission: SPPermissionProtocol {
         case Notifications
         #if os(iOS)
         case NotificationsAndCriticalAlerts
+        case CriticalAlerts
         #endif
     }
     
@@ -50,6 +51,12 @@ struct SPNotificationPermission: SPPermissionProtocol {
             } else {
                 return authorizationSetting.authorizationStatus == .authorized
             }
+        case .CriticalAlerts:
+            if #available(iOS 12.0, *) {
+                return authorizationSetting.criticalAlertSetting == .enabled
+            } else {
+                return false
+            }
         }
     }
     
@@ -63,6 +70,12 @@ struct SPNotificationPermission: SPPermissionProtocol {
                 return authorizationSetting.authorizationStatus == .denied || authorizationSetting.criticalAlertSetting == .disabled
             } else {
                 return authorizationSetting.authorizationStatus == .denied
+            }
+        case .CriticalAlerts:
+            if #available(iOS 12.0, *) {
+                return authorizationSetting.criticalAlertSetting == .disabled
+            } else {
+                return false
             }
         }
     }
@@ -87,7 +100,7 @@ struct SPNotificationPermission: SPPermissionProtocol {
             var opt : UNAuthorizationOptions = [.badge, .alert, .sound]
             if #available(iOS 12.0, *) {
                 opt.insert(.providesAppNotificationSettings)
-                if (type == .NotificationsAndCriticalAlerts) {
+                if (type == .NotificationsAndCriticalAlerts || type == .CriticalAlerts) {
                     opt.insert(.criticalAlert)
                 }
             }
@@ -96,7 +109,7 @@ struct SPNotificationPermission: SPPermissionProtocol {
                     completion()
                 }
             }
-        } else {
+        } else { // iOS9
             #if os(iOS)
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
             #endif
