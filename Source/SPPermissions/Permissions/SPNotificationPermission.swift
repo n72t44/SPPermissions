@@ -99,10 +99,12 @@ struct SPNotificationPermission: SPPermissionProtocol {
             let center = UNUserNotificationCenter.current()
             var opt : UNAuthorizationOptions = [.badge, .alert, .sound]
             if #available(iOS 12.0, *) {
-                opt.insert(.providesAppNotificationSettings)
-                if (type == .NotificationsAndCriticalAlerts || type == .CriticalAlerts) {
+                if type == .NotificationsAndCriticalAlerts {
                     opt.insert(.criticalAlert)
+                } else if type == .CriticalAlerts {
+                    opt = [.criticalAlert]
                 }
+                opt.insert(.providesAppNotificationSettings)
             }
             center.requestAuthorization(options:opt) { (granted, error) in
                 DispatchQueue.main.async {
