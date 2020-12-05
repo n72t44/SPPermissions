@@ -80,6 +80,8 @@ struct SPNotificationPermission: SPPermissionProtocol {
         }
     }
     private func fetchAuthorizationStatus() -> UNNotificationSettings? {
+        assert(Thread.isMainThread, "fetchAuthorizationStatus is not supposed to run on main thread")
+
         var notificationSettings: UNNotificationSettings?
         let semaphore = DispatchSemaphore(value: 0)
         
