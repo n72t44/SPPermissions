@@ -99,11 +99,11 @@ struct SPNotificationPermission: SPPermissionProtocol {
             let center = UNUserNotificationCenter.current()
             var opt : UNAuthorizationOptions = [.badge, .alert, .sound]
             if #available(iOS 12.0, *) {
-                if type == .NotificationsAndCriticalAlerts {
+                if type == .NotificationsAndCriticalAlerts || type == .CriticalAlerts {
                     opt.insert(.criticalAlert)
-                } else if type == .CriticalAlerts {
+                } /*else if type == .CriticalAlerts {
                     opt = [.criticalAlert]
-                }
+                }*/
                 opt.insert(.providesAppNotificationSettings)
             }
             center.requestAuthorization(options:opt) { (granted, error) in
