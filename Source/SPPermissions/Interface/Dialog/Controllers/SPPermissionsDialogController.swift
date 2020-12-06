@@ -208,6 +208,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             }
             isAuthorized ? self.delegate?.didAllow?(permission: permission) : self.delegate?.didDenied?(permission: permission)
             
+            #if SPPERMISSION_LOCATIONALWAYS
             /**
              Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`.
              */
@@ -220,7 +221,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
                     }
                 }
             }
-            
+            #endif
             /**
              Check if all permissions allowed.
              */

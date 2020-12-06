@@ -119,6 +119,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
             /**
              Update `.locationWhenInUse` if allowed `.locationAlwaysAndWhenInUse`
              */
+            #if SPPERMISSION_LOCATIONALWAYS
             if permission == .locationAlwaysAndWhenInUse {
                 if self.permissions.contains(.locationWhenInUse) {
                     if let index = self.permissions.firstIndex(of: .locationWhenInUse) {
@@ -128,7 +129,7 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
                     }
                 }
             }
-            
+            #endif
             /**
              Check if all permissions allowed
              */

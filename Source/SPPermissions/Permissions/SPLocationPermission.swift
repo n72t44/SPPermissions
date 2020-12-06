@@ -31,7 +31,9 @@ struct SPLocationPermission: SPPermissionProtocol {
     enum SPLocationType {
         case WhenInUse
         #if os(iOS)
+        #if SPPERMISSION_LOCATIONALWAYS
         case AlwaysAndWhenInUse
+        #endif
         #endif
     }
     
@@ -61,6 +63,7 @@ struct SPLocationPermission: SPPermissionProtocol {
         
         switch self.type {
         #if os(iOS)
+        #if SPPERMISSION_LOCATIONALWAYS
         case .AlwaysAndWhenInUse:
             if SPPermissionAlwaysAuthorizationLocationHandler.shared == nil {
                 SPPermissionAlwaysAuthorizationLocationHandler.shared = SPPermissionAlwaysAuthorizationLocationHandler()
@@ -73,6 +76,7 @@ struct SPLocationPermission: SPPermissionProtocol {
                 }
             }
             break
+        #endif
         #endif
         case .WhenInUse:
             if SPPermissionWhenInUseAuthorizationLocationHandler.shared == nil {

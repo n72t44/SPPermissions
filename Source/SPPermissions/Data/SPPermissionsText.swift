@@ -40,8 +40,10 @@ enum SPPermissionsText {
             return "Reminders"
         case .speech:
             return "Speech"
+        #if SPPERMISSION_LOCATIONALWAYS
         case .locationAlwaysAndWhenInUse:
             return "Location Always"
+        #endif
         case .motion:
             return "Motion"
         case .mediaLibrary:
@@ -79,8 +81,10 @@ enum SPPermissionsText {
             return "Application can create new task"
         case .speech:
             return "Allow to check your voice"
+        #if SPPERMISSION_LOCATIONALWAYS
         case .locationAlwaysAndWhenInUse:
             return "Allow to access your location"
+        #endif
         case .motion:
             return "Allow to report motion and environment-related data"
         case .mediaLibrary:
