@@ -556,6 +556,54 @@ class SPPermissionsDraw: NSObject {
 
     }
 
+    // http://svg-converter.kyome.io
+    @objc dynamic public class func drawCriticalAlerts(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
+        
+        let context = UIGraphicsGetCurrentContext()!
+        
+        
+        context.saveGState()
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 450, height: 450), target: targetFrame)
+        context.translateBy(x: resizedFrame.minX+7, y: resizedFrame.minY)
+        context.scaleBy(x: resizedFrame.width / 450, y: resizedFrame.height / 450)
+
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 305.1, y: 229.1))
+        path.addLine(to: CGPoint(x: 186.1, y: 42.6))
+        path.addCurve(to: CGPoint(x: 155.4, y: 25.8), controlPoint1: CGPoint(x: 179.3, y: 32.1), controlPoint2: CGPoint(x: 167.9, y: 25.8))
+        path.addCurve(to: CGPoint(x: 124.8, y: 42.6), controlPoint1: CGPoint(x: 142.9, y: 25.8), controlPoint2: CGPoint(x: 131.5, y: 32.1))
+        path.addLine(to: CGPoint(x: 5.7, y: 229.1))
+        path.addCurve(to: CGPoint(x: 4.5, y: 266.1), controlPoint1: CGPoint(x: -1.4, y: 240.3), controlPoint2: CGPoint(x: -1.9, y: 254.5))
+        path.addCurve(to: CGPoint(x: 36.4, y: 285), controlPoint1: CGPoint(x: 10.9, y: 277.8), controlPoint2: CGPoint(x: 23.1, y: 285))
+        path.addLine(to: CGPoint(x: 274.4, y: 285))
+        path.addCurve(to: CGPoint(x: 306.3, y: 266.1), controlPoint1: CGPoint(x: 287.7, y: 285), controlPoint2: CGPoint(x: 299.9, y: 277.8))
+        path.addCurve(to: CGPoint(x: 305.1, y: 229.1), controlPoint1: CGPoint(x: 312.7, y: 254.5), controlPoint2: CGPoint(x: 312.2, y: 240.3))
+        path.close()
+        path.move(to: CGPoint(x: 155.4, y: 253.6))
+        path.addCurve(to: CGPoint(x: 135.6, y: 233.8), controlPoint1: CGPoint(x: 144.5, y: 253.6), controlPoint2: CGPoint(x: 135.6, y: 244.8))
+        path.addCurve(to: CGPoint(x: 155.4, y: 214), controlPoint1: CGPoint(x: 135.6, y: 222.9), controlPoint2: CGPoint(x: 144.5, y: 214))
+        path.addCurve(to: CGPoint(x: 175.2, y: 233.8), controlPoint1: CGPoint(x: 166.4, y: 214), controlPoint2: CGPoint(x: 175.2, y: 222.9))
+        path.addCurve(to: CGPoint(x: 155.4, y: 253.6), controlPoint1: CGPoint(x: 175.2, y: 244.8), controlPoint2: CGPoint(x: 166.3, y: 253.6))
+        path.close()
+        path.move(to: CGPoint(x: 182.9, y: 115.9))
+        path.addLine(to: CGPoint(x: 173.1, y: 181.6))
+        path.addCurve(to: CGPoint(x: 153, y: 196.5), controlPoint1: CGPoint(x: 171.7, y: 191.3), controlPoint2: CGPoint(x: 162.7, y: 198))
+        path.addCurve(to: CGPoint(x: 138.1, y: 181.9), controlPoint1: CGPoint(x: 145.2, y: 195.4), controlPoint2: CGPoint(x: 139.3, y: 189.3))
+        path.addLine(to: CGPoint(x: 127.5, y: 116.3))
+        path.addCurve(to: CGPoint(x: 150.7, y: 84.1), controlPoint1: CGPoint(x: 125, y: 101), controlPoint2: CGPoint(x: 135.4, y: 86.6))
+        path.addCurve(to: CGPoint(x: 182.8, y: 107.3), controlPoint1: CGPoint(x: 166, y: 81.7), controlPoint2: CGPoint(x: 180.4, y: 92))
+        path.addCurve(to: CGPoint(x: 182.9, y: 115.9), controlPoint1: CGPoint(x: 183.3, y: 110.2), controlPoint2: CGPoint(x: 183.3, y: 113.2))
+        path.close()
+
+        
+        color.setFill()
+        path.fill()
+        
+        context.restoreGState()
+
+    }
+    
+    
     @objc dynamic public class func drawPhotos(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 150, height: 150), resizing: ResizingBehavior = .aspectFit, color: UIColor = UIColor(red: 0.000, green: 0.478, blue: 1.000, alpha: 1.000)) {
         
         let context = UIGraphicsGetCurrentContext()!

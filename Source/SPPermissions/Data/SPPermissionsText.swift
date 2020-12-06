@@ -42,7 +42,7 @@ enum SPPermissionsText {
             return "Speech"
         #if SPPERMISSION_LOCATIONALWAYS
         case .locationAlwaysAndWhenInUse:
-            return "Location Always"
+            return "Location Always and When In Use"
         #endif
         case .motion:
             return "Motion"
@@ -52,13 +52,13 @@ enum SPPermissionsText {
             return "Bluetooth"
         #endif
         case .notification:
-            return "Notifications"
+            return "Push Notifications"
         case .notificationAndCriticalAlert:
             return "Notifications and Critical Alerts"
         case .criticalAlert:
             return "Critical Alerts"
         case .locationWhenInUse:
-            return "Location When Use"
+            return "Location When In Use"
         case .tracking:
             return "Tracking"
         }

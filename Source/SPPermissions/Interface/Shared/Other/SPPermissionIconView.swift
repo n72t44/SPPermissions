@@ -62,7 +62,7 @@ public class SPPermissionIconView: UIView {
         case .notificationAndCriticalAlert:
             SPPermissionsDraw.drawNotifications(frame: rect, resizing: .aspectFit, color: color)
         case .criticalAlert:
-            SPPermissionsDraw.drawNotifications(frame: rect, resizing: .aspectFit, color: color)
+            SPPermissionsDraw.drawCriticalAlerts(frame: rect, resizing: .aspectFit, color: color)
         case .microphone:
             SPPermissionsDraw.drawMicrophone(frame: rect, resizing: .aspectFit, color: color)
         case .calendar:
