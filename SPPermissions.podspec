@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
     lo.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_LOCATION" }
   end
 
-  s.subspec 'Location' do |lo|
+  s.subspec 'LocationAlways' do |lo|
     lo.dependency 'SPPermissions/Core'
     lo.pod_target_xcconfig = { "SWIFT_ACTIVE_COMPILATION_CONDITIONS"  => "SPPERMISSION_LOCATIONALWAYS" }
   end
