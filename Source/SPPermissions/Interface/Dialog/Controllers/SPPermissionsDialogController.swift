@@ -47,6 +47,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
      */
     public var headerText: String = SPPermissionsText.subtitleShortText
     
+    public var headerTextColor = SPPermissionsColor.secondaryLabel
+    public var headerFont = UIFont.systemFont(ofSize: 15, weight: .medium)
+
     /**
      Small description in bottom.
      */
@@ -84,7 +87,9 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         
         dialogView.titleLabel.text = titleText
         dialogView.subtitleLabel.text = headerText.uppercased()
-        
+        dialogView.subtitleLabel.textColor = headerTextColor
+        dialogView.subtitleLabel.font = headerFont
+            
         dialogView.alpha = 0
         dialogView.tableView.dataSource = self
         dialogView.tableView.delegate = self
