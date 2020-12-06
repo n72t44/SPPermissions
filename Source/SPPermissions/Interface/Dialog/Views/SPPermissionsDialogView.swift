@@ -130,7 +130,7 @@ class SPPermissionsDialogView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         let inset: CGFloat = 19
-        let contentWidth = bounds.width - inset - inset
+        let contentWidth = bounds.width - inset - inset - 20 // so it doesn't overlap with close button
         let closeSide: CGFloat = 34
         closeButton.frame = CGRect.init(x: bounds.width - inset / 2.5 - closeSide, y: inset / 2.5, width: closeSide, height: closeSide)
         subtitleLabel.layout(x: inset, y: inset, width: contentWidth)
