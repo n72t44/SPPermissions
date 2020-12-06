@@ -564,7 +564,7 @@ class SPPermissionsDraw: NSObject {
         
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 450, height: 450), target: targetFrame)
-        context.translateBy(x: resizedFrame.minX+7, y: resizedFrame.minY)
+        context.translateBy(x: resizedFrame.minX+7, y: resizedFrame.minY+10)
         context.scaleBy(x: resizedFrame.width / 450, y: resizedFrame.height / 450)
 
         let path = UIBezierPath()
