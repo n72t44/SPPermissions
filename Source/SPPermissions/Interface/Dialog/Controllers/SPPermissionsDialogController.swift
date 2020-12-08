@@ -133,8 +133,8 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
         modalPresentationStyle = .overCurrentContext
         controller.present(self, animated: false, completion: {
             UIView.animate(withDuration: 0.3, animations: {
-                self.backgroundView.setGradeAlpha(0.07)
-                self.backgroundView.setBlurRadius(4)
+                self.backgroundView.setGradeAlpha(0.4) // was - 0.07 - darker background
+                self.backgroundView.setBlurRadius(2) // 4 // 0 turns blur alpha to 0
             }, completion: nil)
             UIView.animate(withDuration: 0.3, delay: 0.21, animations: {
                 self.dialogView.alpha = 1
