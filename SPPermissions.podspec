@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "SPPermissions"
-  s.version       = "5.4"
+  s.version       = "5.4c"
   s.summary       = "Ask permissions on Swift. Available List, Dialog & Native interface. Can check state permission."
   s.homepage      = "https://github.com/IvanVorobei/SPPermissions"
   s.source        = { :git => "https://github.com/IvanVorobei/SPPermissions.git", :tag => s.version }
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.ios.framework = 'UIKit'
   s.tvos.framework = 'UIKit'
   s.swift_version = ['4.2', '5.0']
-  s.ios.deployment_target = "10.0"
+  s.ios.deployment_target = "11.0"
   s.tvos.deployment_target = "11.0"
 
   s.default_subspec = 'Core'
