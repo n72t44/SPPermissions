@@ -326,12 +326,8 @@ extension SPPermissionsDialogController: UITableViewDataSource, UITableViewDeleg
         cell.defaultConfigure(for: permission)
         cell = dataSource?.configure(cell, for: permission) ?? cell
         cell.button.addTarget(self, action: #selector(self.process(button:)), for: .touchUpInside)
-        if #available(iOS 11.0, *) {
-            cell.insetsLayoutMarginsFromSafeArea = false
-            cell.contentView.insetsLayoutMarginsFromSafeArea = false
-        } else {
-            // Fallback on earlier versions
-        }
+        cell.insetsLayoutMarginsFromSafeArea = false
+        cell.contentView.insetsLayoutMarginsFromSafeArea = false
         return cell
     }
     

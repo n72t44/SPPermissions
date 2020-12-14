@@ -39,12 +39,8 @@ class SPPermissionsDialogFooterCommentView: UITableViewHeaderFooterView {
         titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 2).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor).isActive = true
         
-        if #available(iOS 11.0, *) {
-            insetsLayoutMarginsFromSafeArea = false
-            contentView.insetsLayoutMarginsFromSafeArea = false
-        } else {
-            // Fallback on earlier versions
-        }
+        insetsLayoutMarginsFromSafeArea = false
+        contentView.insetsLayoutMarginsFromSafeArea = false
     }
     
     required init?(coder: NSCoder) {

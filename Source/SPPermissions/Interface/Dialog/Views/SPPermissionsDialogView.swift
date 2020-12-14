@@ -52,11 +52,7 @@ class SPPermissionsDialogView: UIView {
         backgroundColor = SPPermissionsColor.systemBackground
         layer.cornerRadius = 15
         layer.anchorPoint = CGPoint.init(x: 0.5, y: 0.5)
-        if #available(iOS 11.0, *) {
-            insetsLayoutMarginsFromSafeArea = false
-        } else {
-            // Fallback on earlier versions
-        }
+        insetsLayoutMarginsFromSafeArea = false
         
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 29, weight: .bold)
@@ -69,25 +65,13 @@ class SPPermissionsDialogView: UIView {
         subtitleLabel.textColor = SPPermissionsColor.secondaryLabel
         addSubview(subtitleLabel)
         
-        if #available(iOS 11.0, *) {
-            tableView.contentInsetAdjustmentBehavior = .never
-        } else {
-            // Fallback on earlier versions
-        }
+        tableView.contentInsetAdjustmentBehavior = .never
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
         tableView.delaysContentTouches = false
-        if #available(iOS 11.0, *) {
-            tableView.insetsContentViewsToSafeArea = false
-        } else {
-            // Fallback on earlier versions
-        }
+        tableView.insetsContentViewsToSafeArea = false
         tableView.preservesSuperviewLayoutMargins = false
-        if #available(iOS 11.0, *) {
-            tableView.insetsLayoutMarginsFromSafeArea = false
-        } else {
-            // Fallback on earlier versions
-        }
+        tableView.insetsLayoutMarginsFromSafeArea = false
         tableView.allowsSelection = false
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 45 + 10 - 5, bottom: 0, right: 0)
         tableView.alwaysBounceVertical = false
