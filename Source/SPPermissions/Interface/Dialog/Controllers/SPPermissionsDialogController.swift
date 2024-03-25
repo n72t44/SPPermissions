@@ -72,6 +72,16 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     
     private var permissions: [SPPermission]
     
+    public var dismissible: Bool = true {
+        didSet {
+            if dismissible {
+                dialogView.closeButton.isHidden = false
+            } else {
+                dialogView.closeButton.isHidden = true
+            }
+        }
+    }
+    
     init(_ permissions: [SPPermission]) {
         self.permissions = permissions
         super.init(nibName: nil, bundle: nil)
@@ -275,7 +285,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     
     @objc func handleGesture(sender: UIPanGestureRecognizer) {
         
-        guard bounceAnimationEnabled else {
+        guard bounceAnimationEnabled && dismissible else {
             return
         }
         
