@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		038D4F692C29701F000B42EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 038D4F672C29701F000B42EE /* Localizable.strings */; };
 		9E50E9B8238B1F1A00B71477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E50E9B7238B1F1A00B71477 /* Assets.xcassets */; };
 		9E50E9BB238B1F1A00B71477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E50E9B9238B1F1A00B71477 /* LaunchScreen.storyboard */; };
 		9E50E9D5238B24B900B71477 /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA2660236ED1790070B2BA /* SPPermissions.swift */; };
@@ -147,6 +148,11 @@
 
 /* Begin PBXFileReference section */
 		031BC62C2574605B008D6A4A /* Permissions iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Permissions iOS.entitlements"; sourceTree = "<group>"; };
+		038D4F682C29701F000B42EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		038D4F6A2C2971A1000B42EE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		038D4F6B2C2971AF000B42EE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		038D4F6C2C2971B6000B42EE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		038D4F6D2C2971C7000B42EE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9E50E9AE238B1EDD00B71477 /* Permissions tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Permissions tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E50E9B7238B1F1A00B71477 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E50E9BA238B1F1A00B71477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -298,6 +304,7 @@
 		F43F8D91236ECC9D00B94208 = {
 			isa = PBXGroup;
 			children = (
+				038D4F672C29701F000B42EE /* Localizable.strings */,
 				F4342386251CDBEB0094F319 /* .github */,
 				F4342383251CDBEB0094F319 /* .gitignore */,
 				F4342385251CDBEB0094F319 /* LICENSE */,
@@ -676,6 +683,10 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				de,
+				es,
+				it,
 			);
 			mainGroup = F43F8D91236ECC9D00B94208;
 			productRefGroup = F43F8D9C236ECC9D00B94208 /* Products */;
@@ -711,6 +722,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038D4F692C29701F000B42EE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +866,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		038D4F672C29701F000B42EE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				038D4F682C29701F000B42EE /* en */,
+				038D4F6A2C2971A1000B42EE /* fr */,
+				038D4F6B2C2971AF000B42EE /* de */,
+				038D4F6C2C2971B6000B42EE /* es */,
+				038D4F6D2C2971C7000B42EE /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9E50E9B9238B1F1A00B71477 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -970,6 +994,7 @@
 			baseConfigurationReference = F4FB9E9D2379E96E00F7272C /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1035,6 +1060,7 @@
 			baseConfigurationReference = F4FB9E9D2379E96E00F7272C /* SPPermissionsConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

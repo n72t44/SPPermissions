@@ -122,8 +122,8 @@ public class SPPermissionTableViewCell: UITableViewCell {
     func defaultConfigure(for permission: SPPermission) {
         
         permissionTitleLabel.text = SPPermissionsText.name(for: permission)
-        permissionDescriptionLabel.text = SPPermissionsText.description(for: permission)
-        
+        permissionDescriptionLabel.text = NSLocalizedString(SPPermissionsText.description(for: permission), comment:"")
+
         button.permission = permission
         button.allowTitle = SPPermissionsText.allow
         button.allowedTitle = SPPermissionsText.allowed
