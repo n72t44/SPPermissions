@@ -252,6 +252,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		038D4F6E2C297777000B42EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				038D4F672C29701F000B42EE /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		9E50E9AF238B1EDD00B71477 /* Example tvOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +318,7 @@
 				F4342388251CDBEB0094F319 /* Package.swift */,
 				F4342389251CDBEB0094F319 /* README.md */,
 				F4342384251CDBEB0094F319 /* SPPermissions.podspec */,
+				038D4F6E2C297777000B42EE /* Resources */,
 				F43F8DA6236ECCEE00B94208 /* Source */,
 				F4EA2644236ECE040070B2BA /* Example iOS */,
 				9E50E9AF238B1EDD00B71477 /* Example tvOS */,
@@ -340,7 +349,6 @@
 		F43F8DA9236ECD3E00B94208 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				038D4F672C29701F000B42EE /* Localizable.strings */,
 				F43F8D9E236ECC9D00B94208 /* SPPermissions.h */,
 				F4FB9E9D2379E96E00F7272C /* SPPermissionsConfiguration.xcconfig */,
 				F43F8D9F236ECC9D00B94208 /* SPPermissionsInfo.plist */,
