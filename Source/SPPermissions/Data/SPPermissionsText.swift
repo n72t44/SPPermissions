@@ -97,7 +97,7 @@ enum SPPermissionsText {
         case .notificationAndCriticalAlert:
             return "Allow some notifications to bypass the device's mute switch and Do Not Disturb settings"
         case .criticalAlert:
-            return "Highlight data relevant to your area"
+            return "Allow some notifications to bypass the device's mute switch and Do Not Disturb settings"
         case .locationWhenInUse:
             return "Allow to access your location"
         case .tracking:
