@@ -156,7 +156,7 @@ extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
         if permission == .notification {
             let data = SPPermissionDeniedAlertData()
             data.alertOpenSettingsDeniedPermissionTitle = NSLocalizedString("Permission denied",comment:"")
-            data.alertOpenSettingsDeniedPermissionDescription = NSLocalizedString("To allow permission, you can go to Settings",comment:"")
+            data.alertOpenSettingsDeniedPermissionDescription = NSLocalizedString("To grant permission, you can go to Settings",comment:"")
             data.alertOpenSettingsDeniedPermissionButtonTitle = NSLocalizedString("Settings",comment:"")
             data.alertOpenSettingsDeniedPermissionCancelTitle = NSLocalizedString("Cancel",comment:"")
             return data

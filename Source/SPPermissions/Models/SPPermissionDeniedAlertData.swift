@@ -34,7 +34,7 @@ public class SPPermissionDeniedAlertData: NSObject {
     /**
      Subtitle of alert.
      */
-    public var alertOpenSettingsDeniedPermissionDescription: String = "To allow permission, you can go to Settings"
+    public var alertOpenSettingsDeniedPermissionDescription: String = "To grant permission, you can go to Settings"
     
     /**
      Title of action button.
