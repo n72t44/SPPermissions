@@ -93,11 +93,11 @@ enum SPPermissionsText {
             return "Allow access to bluetooth"
         #endif
         case .notification:
-            return "Get important information without opening app"
+            return "Receive notification alerts"
         case .notificationAndCriticalAlert:
-            return "Allow normal notifications and critical alerts that can bypass the device's mute switch and Do Not Disturb settings"
+            return "Allow some notifications to bypass the device's mute switch and Do Not Disturb settings"
         case .criticalAlert:
-            return "Allow notifications that can bypass the device's mute switch and Do Not Disturb settings"
+            return "Highlight data relevant to your area"
         case .locationWhenInUse:
             return "Allow to access your location"
         case .tracking:
@@ -110,6 +110,6 @@ enum SPPermissionsText {
     static var subtitleShortText: String = "Permissions request"
     static var commentText: String = "Permissions are necessary for the application to work and perform correctly. Push are not required permissions."
     
-    static var allow: String = "Allow"
+    static var allow: String = "Check"
     static var allowed: String = "Allowed"
 }

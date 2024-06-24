@@ -143,17 +143,17 @@ public class SPPermissionsListController: UITableViewController, SPPermissionsCo
                     data = userData
                 }
                 let alertController = UIAlertController.init(
-                    title: data.alertOpenSettingsDeniedPermissionTitle,
-                    message: data.alertOpenSettingsDeniedPermissionDescription,
+                    title: NSLocalizedString(data.alertOpenSettingsDeniedPermissionTitle,comment:""),
+                    message: NSLocalizedString(data.alertOpenSettingsDeniedPermissionDescription,comment:""),
                     preferredStyle: .alert
                 )
                 alertController.addAction(UIAlertAction.init(
-                    title: data.alertOpenSettingsDeniedPermissionCancelTitle,
+                    title: NSLocalizedString(data.alertOpenSettingsDeniedPermissionCancelTitle,comment:""),
                     style: UIAlertAction.Style.cancel,
                     handler: nil)
                 )
                 alertController.addAction(UIAlertAction.init(
-                    title: data.alertOpenSettingsDeniedPermissionButtonTitle,
+                    title: NSLocalizedString(data.alertOpenSettingsDeniedPermissionButtonTitle,comment:""),
                     style: UIAlertAction.Style.default,
                     handler: { (action) in
                         SPPermissionsOpener.openSettings()

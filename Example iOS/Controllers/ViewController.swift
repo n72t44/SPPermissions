@@ -155,14 +155,14 @@ extension ViewController: SPPermissionsDataSource, SPPermissionsDelegate {
     func deniedData(for permission: SPPermission) -> SPPermissionDeniedAlertData? {
         if permission == .notification {
             let data = SPPermissionDeniedAlertData()
-            data.alertOpenSettingsDeniedPermissionTitle = "Permission denied"
-            data.alertOpenSettingsDeniedPermissionDescription = "Please, go to Settings and allow permission."
-            data.alertOpenSettingsDeniedPermissionButtonTitle = "Settings"
-            data.alertOpenSettingsDeniedPermissionCancelTitle = "Cancel"
+            data.alertOpenSettingsDeniedPermissionTitle = NSLocalizedString("Permission denied",comment:"")
+            data.alertOpenSettingsDeniedPermissionDescription = NSLocalizedString("To allow permission, you can go to Settings",comment:"")
+            data.alertOpenSettingsDeniedPermissionButtonTitle = NSLocalizedString("Settings",comment:"")
+            data.alertOpenSettingsDeniedPermissionCancelTitle = NSLocalizedString("Cancel",comment:"")
             return data
         } else {
             // If returned nil, alert will not show.
-            print("Alert for \(permission.name) not show, becouse in datasource returned nil for configure data. If you need alert, configure this.")
+            print("Alert for \(permission.name) not shown, becouse in datasource returned nil for configure data. If you need alert, configure this.")
             return nil
         }
     }
