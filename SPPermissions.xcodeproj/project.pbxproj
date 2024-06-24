@@ -304,7 +304,6 @@
 		F43F8D91236ECC9D00B94208 = {
 			isa = PBXGroup;
 			children = (
-				038D4F672C29701F000B42EE /* Localizable.strings */,
 				F4342386251CDBEB0094F319 /* .github */,
 				F4342383251CDBEB0094F319 /* .gitignore */,
 				F4342385251CDBEB0094F319 /* LICENSE */,
@@ -341,6 +340,7 @@
 		F43F8DA9236ECD3E00B94208 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				038D4F672C29701F000B42EE /* Localizable.strings */,
 				F43F8D9E236ECC9D00B94208 /* SPPermissions.h */,
 				F4FB9E9D2379E96E00F7272C /* SPPermissionsConfiguration.xcconfig */,
 				F43F8D9F236ECC9D00B94208 /* SPPermissionsInfo.plist */,
