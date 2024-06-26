@@ -131,7 +131,7 @@ public class SPPermissionTableViewCell: UITableViewCell {
         button.allowBackgroundColor = SPPermissionsColor.buttonArea
         button.allowedTitleColor = SPPermissionsColor.white
         button.allowedBackgroundColor = SPPermissionsColor.base
-        button.style = permission.isAuthorized ? SPPermissionActionButton.Style.allowed : SPPermissionActionButton.Style.base
+        button.style = permission.isAuthorized ? SPPermissionActionButton.Style.allowed : (permission.isDenied ? SPPermissionActionButton.Style.denied : SPPermissionActionButton.Style.base)
         
         iconView.permission = permission
         iconView.color = button.allowedBackgroundColor

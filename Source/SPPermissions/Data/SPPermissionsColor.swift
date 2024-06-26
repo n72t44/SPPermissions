@@ -26,6 +26,9 @@ enum SPPermissionsColor {
     static var base: UIColor {
         return UIColor.systemBlue
     }
+    static var red: UIColor {
+        return UIColor.systemRed
+    }
     
     static var black: UIColor {
         return UIColor.black

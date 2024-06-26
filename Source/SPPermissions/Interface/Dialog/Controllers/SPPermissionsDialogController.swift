@@ -168,6 +168,8 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
                 self.dialogView.transform = CGAffineTransform.init(scaleX: 0.9, y: 0.9)
                 self.dialogView.alpha = 0
             }, completion: nil)
+            let ids: [Int] = self.permissions.map { $0.rawValue }
+            self.delegate?.didHide?(permissions: ids)
         }
         UIView.animate(withDuration: 0.3, animations: {
             self.backgroundView.setGradeAlpha(0)
@@ -183,8 +185,8 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         super.dismiss(animated: flag, completion: {
             completion?()
-            let ids: [Int] = self.permissions.map { $0.rawValue }
-            self.delegate?.didHide?(permissions: ids)
+            //let ids: [Int] = self.permissions.map { $0.rawValue }
+            //self.delegate?.didHide?(permissions: ids)
         })
     }
     
@@ -244,6 +246,13 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
                     self.dismiss(withDialog: true)
                 })
             }
+            /*
+            let perm = self.permissions.filter { !$0.isAuthorized && !$0.isDenied }
+            if perm.isEmpty {
+                SPPermissionsDelay.wait(0.2, closure: {
+                    self.dismiss(withDialog: true)
+                })
+            }*/
             
             /**
              Show alert with propose go to settings and allow permission.
