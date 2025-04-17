@@ -150,6 +150,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
             }, completion: nil)
             SPPermissionsDelay.wait(0.21, closure: {
                 if self.bounceAnimationEnabled {
+                    self.animator.removeAllBehaviors() // Safely clear before adding new behavior
                     self.animator.addBehavior(self.snapBehavior)
                 }
             })
