@@ -25,7 +25,11 @@ enum SPPermissionsOpener {
     
     static func openSettings() {
         DispatchQueue.main.async {
-            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            var settingsUrl = URL(string: UIApplication.openSettingsURLString)
+            if #available(iOS 16.0, *) {
+                settingsUrl = URL(string: UIApplication.openNotificationSettingsURLString)
+            }
+            guard let settingsUrl else {
                 return
             }
             
