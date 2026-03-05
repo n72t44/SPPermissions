@@ -162,6 +162,7 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
      - parameter withDialog: Add dismiss animation also content area.
      */
     public func dismiss(withDialog: Bool) {
+        isDismissing = true
         if withDialog {
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .beginFromCurrentState, animations: {
                 self.animator.removeAllBehaviors()
@@ -286,7 +287,8 @@ public class SPPermissionsDialogController: UIViewController, SPPermissionsContr
     }
     
     // MARK: Animator
-    
+
+    var isDismissing: Bool = false
     var animator = UIDynamicAnimator()
     var attachmentBehavior : UIAttachmentBehavior!
     var gravityBehaviour : UIGravityBehavior!
